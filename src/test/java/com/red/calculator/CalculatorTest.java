@@ -14,6 +14,26 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
+    @Test
+    void testEnsembleChiffres() {
+        // Test avec un nombre positif
+        Set<Integer> result1 = Calculator.ensembleChiffres(7679);
+        assertEquals(Set.of(6, 7, 9), result1, "Les chiffres de 7679 doivent être {6, 7, 9}");
+
+        // Test avec un nombre négatif (devrait ignorer le signe)
+        Set<Integer> result2 = Calculator.ensembleChiffres(-11);
+        assertEquals(Set.of(1), result2, "Les chiffres de -11 doivent être {1}");
+
+        // Test avec un nombre à un seul chiffre
+        Set<Integer> result3 = Calculator.ensembleChiffres(3);
+        assertEquals(Set.of(3), result3, "Les chiffres de 3 doivent être {3}");
+
+        // Test avec un nombre ayant des chiffres répétitifs
+        Set<Integer> result4 = Calculator.ensembleChiffres(100110);
+        assertEquals(Set.of(0, 1), result4, "Les chiffres de 100110 doivent être {0, 1}");
+
+    }
+
     Calculator calculator;
     @BeforeEach
     public void setUP(){

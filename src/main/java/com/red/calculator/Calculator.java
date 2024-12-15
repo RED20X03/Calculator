@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Calculator {
 
-    public  static int add(int a, int b) {
+    public static int add(int a, int b) {
         return a + b;
     }
 
@@ -14,6 +14,7 @@ public class Calculator {
         }
         return opG / opD;
     }
+
     public static Set<Integer> ensembleChiffres(int pNombre) {
         Set<Integer> chiffres = new HashSet<>();
 
@@ -24,6 +25,5 @@ public class Calculator {
         }
 
         return chiffres;
-
-
     }
+}
