@@ -1,11 +1,13 @@
 package com.red.calculator;
 
+import java.util.Set;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+
 
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -15,7 +17,6 @@ class CalculatorTest {
     Calculator calculator;
     @BeforeEach
     public void setUP(){
-        calculator=new Calculator();
         System.out.println("SetUp");
     }
     // Test paramétré pour l'addition
@@ -42,7 +43,6 @@ class CalculatorTest {
 
     @AfterEach
     public void tearDown(){
-        calculator=null;
         System.out.println("TearDown");
 
     }
