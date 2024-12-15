@@ -2,12 +2,15 @@ package com.red.calculator;
 
 public class Calculator {
 
-    public  int add(int a, int b) {
+    public  static int add(int a, int b) {
         return a + b;
     }
 
-    public int divide(int opG, int opD) {
-       return opG/opD;
+    public static int divide(int opG, int opD) {
+        if (opD == 0) {
+            throw new ArithmeticException("Division par zéro");
+        }
+        return opG / opD;
     }
 
 }
