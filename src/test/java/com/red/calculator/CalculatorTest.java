@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
@@ -32,6 +33,27 @@ class CalculatorTest {
         Set<Integer> result4 = Calculator.ensembleChiffres(100110);
         assertEquals(Set.of(0, 1), result4, "Les chiffres de 100110 doivent être {0, 1}");
 
+    }
+    @Test
+    void testAddWithOverflow() {
+        // Vérifie que l'addition dépasse la limite
+        assertThatThrownBy(() -> Calculator.add(Integer.MAX_VALUE, 1))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessageContaining("Dépassement de la capacite d'un entier lors l'addition");
+    }
+    @Test
+    void testDivideByZero() {
+        // Vérifie la division par zéro
+        assertThatThrownBy(() -> Calculator.divide(10, 0))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessageContaining("Division par zéro impossible");
+    }
+
+    @Test
+    void testDivideOverflowCase() {
+        assertThatThrownBy(() -> Calculator.divide(Integer.MIN_VALUE, -1))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessageContaining("overflow");
     }
 
     Calculator calculator;

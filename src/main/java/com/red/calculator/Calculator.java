@@ -5,14 +5,21 @@ import java.util.Set;
 public class Calculator {
 
     public static int add(int a, int b) {
-        return a + b;
+try{
+    return Math.addExact(a,b);
+}catch (ArithmeticException e){
+    throw new ArithmeticException("Dépassement de la capacite d'un entier lors l'addition");
+}
     }
 
     public static int divide(int opG, int opD) {
         if (opD == 0) {
-            throw new ArithmeticException("Division par zéro");
+            throw new ArithmeticException("Division par zéro impossible");
         }
-        return opG / opD;
+       if(opG==Integer.MIN_VALUE && opD==-1){
+           throw new ArithmeticException("overflow");
+       }
+       return opG/opD;
     }
 
     public static Set<Integer> ensembleChiffres(int pNombre) {
