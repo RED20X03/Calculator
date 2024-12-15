@@ -31,6 +31,7 @@ void add() {
         assertEquals(1,calculator.divide(3,2)," devrait donner 1 comme resultat");
         assertEquals(5,calculator.divide(10,2)," devrait donner 5 comme resultat");
         assertEquals(3,calculator.divide(6,2)," devrait donner 3 comme resultat");
+        assertThrows(ArithmeticException.class, () -> calculator.divide(1, 0), "la division par 0 est impossible");
     }
 
     @AfterEach
