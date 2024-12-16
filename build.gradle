@@ -20,7 +20,7 @@ test {
 	testLogging {
 		events "passed", "skipped", "failed"
 	}
-	finalizedBy jacocoTestReport 
+	finalizedBy jacocoTestReport
 }
 
 // JaCoCo Report Configuration
