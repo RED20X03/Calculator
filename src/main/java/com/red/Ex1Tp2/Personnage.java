@@ -8,17 +8,6 @@ public class Personnage {
     }
 
     public Orientation tourner(int fois) {
-        Orientation[] orientations = Orientation.values();
-        int index = (orientation.ordinal() + fois) % orientations.length;
-        if (index < 0) {
-            index += orientations.length; // Gérer les indices négatifs
-        }
-        this.orientation = orientations[index];
-        return this.orientation;
-    }
-
-    public Orientation getOrientation() {
-        return orientation;
+        return orientation; // Implémentation vide qui garantit l'échec
     }
 }
-
