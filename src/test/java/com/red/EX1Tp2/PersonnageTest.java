@@ -10,6 +10,6 @@ public class PersonnageTest {
     @Test
     void testTournerUneFois() {
         Personnage p = new Personnage();
-        assertEquals(Orientation.EST, p.tourner(1)); // Échoue car la méthode tourner n'est pas encore implémentée
+        assertEquals(Orientation.EST, p.tourner(1)); //le test va passer sans problem
     }
 }

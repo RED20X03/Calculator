@@ -6,8 +6,12 @@ public class Personnage {
     public Personnage() {
         this.orientation = Orientation.NORD; // Orientation initiale
     }
-
+    //Modification de la méthode tourner pour gérer le cas d'un seul quart de tour
     public Orientation tourner(int fois) {
-        return orientation; // Implémentation vide qui garantit l'échec
+        Orientation[] orientations = Orientation.values();
+        int index = (orientation.ordinal() + fois) % orientations.length;
+        this.orientation = orientations[index];
+        return this.orientation;
     }
+
 }
