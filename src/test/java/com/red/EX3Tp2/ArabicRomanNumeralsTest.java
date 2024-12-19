@@ -3,15 +3,15 @@ package com.red.EX3Tp2;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ArabicRomanNumeralsTest {
+public class ArabicRomanNumeralsTest {
 
     @Test
-    void testConvertSimpleNumbers() {
-        assertThat(ArabicRomanNumerals.convert(1)).isEqualTo("I");
-        assertThat(ArabicRomanNumerals.convert(3)).isEqualTo("III");
-        assertThat(ArabicRomanNumerals.convert(5)).isEqualTo("V");
+    void testConvert1() {
+        assertEquals("I", ArabicRomanNumerals.convert(1)); // Échoue car non implémenté
     }
-
-
 }
+
+
+
