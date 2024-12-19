@@ -2,6 +2,7 @@ package com.red.EX3Tp2;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ArabicRomanNumeralsTest {
 
@@ -18,6 +19,11 @@ class ArabicRomanNumeralsTest {
         assertThat(ArabicRomanNumerals.convert(9)).isEqualTo("IX");
         assertThat(ArabicRomanNumerals.convert(39)).isEqualTo("XXXIX");
         assertThat(ArabicRomanNumerals.convert(50)).isEqualTo("L");
+    }
+    @Test
+    void testInvalidNumbers() {
+        assertThrows(IllegalArgumentException.class, () -> ArabicRomanNumerals.convert(0));
+        assertThrows(IllegalArgumentException.class, () -> ArabicRomanNumerals.convert(51));
     }
 
 }
