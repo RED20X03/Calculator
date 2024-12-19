@@ -9,8 +9,23 @@ public class ArabicRomanNumeralsTest {
 
     @Test
     void testConvert1() {
-        assertEquals("I", ArabicRomanNumerals.convert(1)); // le test va passer 
+        assertEquals("I", ArabicRomanNumerals.convert(1)); // le test va passer
     }
+    @Test
+    void testConvert3() {
+        assertEquals("III", ArabicRomanNumerals.convert(3));
+    }
+
+    @Test
+    void testConvert4() {
+        assertEquals("IV", ArabicRomanNumerals.convert(4));
+    }
+
+    @Test
+    void testConvert5() {
+        assertEquals("V", ArabicRomanNumerals.convert(5));
+    }
+
 }
 
 
