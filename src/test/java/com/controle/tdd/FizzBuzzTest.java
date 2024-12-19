@@ -20,6 +20,6 @@ public class FizzBuzzTest {
     }
     @Test
     void shouldReturnFizzBuzzWhenDivisibleBy3And5() {
-        assertThat(FizzBuzz.de(15)).isEqualTo("FizzBuzz"); // Test échouera
+        assertThat(FizzBuzz.de(15)).isEqualTo("FizzBuzz"); 
     }
 }
