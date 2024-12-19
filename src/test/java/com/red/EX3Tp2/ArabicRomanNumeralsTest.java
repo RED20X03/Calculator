@@ -9,7 +9,7 @@ public class ArabicRomanNumeralsTest {
 
     @Test
     void testConvert1() {
-        assertEquals("I", ArabicRomanNumerals.convert(1)); // Échoue car non implémenté
+        assertEquals("I", ArabicRomanNumerals.convert(1)); // le test va passer 
     }
 }
 
